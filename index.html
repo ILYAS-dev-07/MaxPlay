@@ -1,113 +1,76 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Max Play — Главная</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-        /* Стили для вкладки О нас */
-        #about .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        #about h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 700;
-        }
-        #about p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxPlay</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Max Play</div>
-        <nav class="main-nav">
-            <button type="button" data-section="home" class="nav-btn">Главная</button>
-            <button type="button" data-section="menu" class="nav-btn">Меню</button>
-            <button type="button" data-section="shop" class="nav-btn">Магазин</button>
-            <button type="button" data-section="contact" class="nav-btn">Обратная связь</button>
-            <button type="button" data-section="tech" class="nav-btn">Новые технологии</button>
-            <button type="button" data-section="about" class="nav-btn">О нас</button>
-        </nav>
-    </header>
 
-    <main>
-        <!-- Главная (home) -->
-        <section id="home" class="page active">
-            <div class="hero">
-                <h1>Будущее уже здесь</h1>
-                <p>Инновации Max Play формируют технологический мир завтрашнего дня.</p>
-                <button id="learnMoreBtn" class="primary">Подробнее</button>
-            </div>
-        </section>
-
-        <!-- Меню -->
-        <section id="menu" class="page">
-            <div class="container">
-                <h2>Меню</h2>
-                <p>Информация о наших услугах и продуктах.</p>
-            </div>
-        </section>
-
-        <!-- Магазин -->
-        <section id="shop" class="page">
-            <div class="container">
-                <h2>Магазин</h2>
-                <p>Здесь будут товары Max Play.</p>
-            </div>
-        </section>
-
-        <!-- Обратная связь -->
-        <section id="contact" class="page">
-            <div class="container">
-                <h2>Обратная связь</h2>
-                <p>Форма обратной связи или контакты.</p>
-            </div>
-        </section>
-
-        <!-- Новые технологии -->
-        <section id="tech" class="page">
-            <div class="container">
-                <h2>Новые технологии</h2>
-                <p>Наши будущие проекты и R&D.</p>
-            </div>
-        </section>
-
-        <!-- О нас -->
-        <section id="about" class="page">
-            <div class="container">
-                <h2>О нас</h2>
-                <p>Max Play — это не просто компания. Мы строим будущее технологий, создавая продукты, которые меняют привычный мир и открывают новые горизонты возможностей. Наша миссия — вдохновлять людей на смелые идеи и обеспечивать их инструментами для воплощения самых амбициозных проектов.</p>
-                <p>Мы верим, что инновации рождаются там, где технологии встречаются с креативностью. Каждый наш продукт проходит тщательный путь разработки, сочетая передовые инженерные решения, стильный дизайн и заботу о пользователе. В Max Play качество и надежность идут рука об руку с прогрессом и новаторством.</p>
-                <p>Наша команда объединяет талантливых специалистов, увлеченных своим делом, и мы гордимся тем, что создаем продукты, которые становятся частью жизни людей, делают её удобнее, ярче и продуктивнее. Max Play — это пространство, где будущее создается сегодня.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Max Play. Все права защищены.</p>
-    </footer>
-<div class="menu">
+<!-- ===== Навигация ===== -->
+<nav>
+  <div class="logo">MaxPlay</div>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <ul class="nav-links">
-    <li><a href="#">Главная</a></li>
-    <li><a href="#">О нас</a></li>
-    <li><a href="#">Продукты</a></li>
+    <li><a href="#hero">Главная</a></li>
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#products">Продукты</a></li>
+    <li><a href="#contact">Контакты</a></li>
   </ul>
-</div>
+</nav>
 
-    <script src="script.js"></script>
+<!-- ===== Главный блок ===== -->
+<section class="hero" id="hero">
+  <h1>Добро пожаловать в MaxPlay</h1>
+  <p>Лучшие смарт-решения для твоей жизни</p>
+</section>
+
+<!-- ===== О нас ===== -->
+<section id="about" class="container">
+  <h2>О нас</h2>
+  <p>Мы создаём инновационные продукты, которые делают жизнь проще, умнее и интереснее.</p>
+</section>
+
+<!-- ===== Продукты ===== -->
+<section id="products" class="container products">
+  <div class="product-card">
+    <img src="https://via.placeholder.com/300x200" alt="Продукт 1">
+    <h3>Смарт-рюкзак</h3>
+    <p>Умный рюкзак с встроенной зарядкой для всех устройств.</p>
+    <button>Подробнее</button>
+  </div>
+  <div class="product-card">
+    <img src="https://via.placeholder.com/300x200" alt="Продукт 2">
+    <h3>Смарт-очки</h3>
+    <p>Очки с дополненной реальностью и защитой глаз.</p>
+    <button>Подробнее</button>
+  </div>
+  <div class="product-card">
+    <img src="https://via.placeholder.com/300x200" alt="Продукт 3">
+    <h3>Смарт-часы</h3>
+    <p>Следи за здоровьем и уведомлениями прямо с руки.</p>
+    <button>Подробнее</button>
+  </div>
+</section>
+
+<!-- ===== Контакты ===== -->
+<section id="contact" class="container">
+  <h2>Контакты</h2>
+  <p>Свяжитесь с нами по email: contact@maxplay.com</p>
+</section>
+
+<!-- ===== Футер ===== -->
+<footer>
+  &copy; 2025 MaxPlay. Все права защищены.
+</footer>
+
+<!-- ===== JS для гамбургера ===== -->
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('show');
+}
+</script>
+
 </body>
-
 </html>
-
