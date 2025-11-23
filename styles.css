@@ -37,12 +37,23 @@ header{
   align-items:center;
   justify-content:space-between;
 }
-.logo{
-  font-weight:700;
-  font-size:20px;
-  color:var(--accent-strong);
-  letter-spacing:0.2px;
+.logo {
+    width: 150px;   /* ширина лого */
+    height: auto;   /* сохраняем пропорции */
+    display:block;
 }
+
+/* Скрываем гамбургер по умолчанию, покажем в media */
+.hamburger{
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:26px;
+  cursor:pointer;
+  color:var(--text);
+}
+
+/* main wrapper */
 main{
   max-width:var(--max-width);
   margin:28px auto;
@@ -56,21 +67,23 @@ main{
   align-items:center;
   flex-wrap:wrap;
 }
-.nav-btn{
-  border:0;
-  background:transparent;
-  padding:8px 12px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:600;
-  color:var(--muted);
-  transition: all .18s ease;
+.nav-btn {
+    border: 3px solid var(--accent); /* обводка */
+    background: transparent;         /* прозрачный фон */
+    padding: 5px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent-strong);
+    transition: all 0.25s ease;
 }
-.nav-btn:hover{
-  transform:translateY(-3px);
-  color:var(--text);
-  background: rgba(11,18,32,0.03);
+
+.nav-btn:hover {
+    background: rgba(40, 113, 250, 0.06); /* лёгкое затемнение при наведении */
+    color: var(--accent-strong);
+    transform: translateY(-2px);
 }
+
 .nav-btn.active,
 .nav-btn:focus{
   color:var(--accent-strong);
@@ -160,7 +173,7 @@ footer{
   font-size:14px;
 }
 
-/* Responsive */
+/* Responsive desktop hero */
 @media (min-width:900px){
   .hero{ flex-direction:row; align-items:center; justify-content:space-between; gap:30px }
   .hero h1{ font-size:36px }
@@ -223,40 +236,130 @@ footer{
   color: #555;
 }
 
-/* --- Оставляем все твои базовые стили --- */
-/* ... вставляем весь твой css из резервного варианта ... */
-
-/* Адаптивность для мобильных */
-@media (max-width: 768px){
-  .main-nav{
-    display:none;
-    position:absolute;
-    top:60px;
-    left:0;
-    width:100%;
+/* Contacts & form */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display:flex;
     flex-direction:column;
-    background:var(--bg);
-    gap:0;
-    padding:10px 0;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    gap:10px;
+}
+
+.contact-list li {
+    margin:0;
+    font-size: 1.05em;
+}
+
+.contact-list a {
+    color: var(--accent-strong);
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+}
+
+.feedback-form input {
+    width: 100%;
+    padding: 10px 10px;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    font-size: 15px;
+}
+.feedback-form textarea {
+    height: 150px;  /* можно увеличить до 200px или больше */
+    width: 100%;
+    padding: 10px;       /* равномерный отступ со всех сторон */
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    font-size: 15px;
+    vertical-align: top; /* текст всегда сверху */
+    line-height: 1.4;    /* нормальный интерлиньяж */
+    resize: vertical;
+}
+
+.feedback-form button {
+    border: 3px solid var(--accent);
+    background: transparent;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* ---------------------------
+   Адаптивные правила (mobile)
+   --------------------------- */
+@media (max-width: 900px) {
+  main{
+    margin:20px auto;
+    padding:0 14px 60px;
   }
-  .main-nav.show{ display:flex; }
-  .nav-btn{ padding:12px; width:100%; text-align:center; }
-  .hamburger{ display:block; font-size:28px; cursor:pointer; }
-  .hero{ flex-direction:column; align-items:flex-start; }
-  .product-grid{ grid-template-columns: 1fr; gap:16px; }
+  .hero h1 { font-size:28px; }
+  .hero p { font-size:15px; }
+
+  /* логотип чуть меньше */
+  .logo { width:130px; }
 }
 
-/* Планшеты */
-@media (max-width: 1024px){
-  .hero h1{ font-size:32px; }
-  .hero p{ font-size:1.1em; }
+/* Мобильное меню и общие правки для маленьких экранов */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;               /* скрываем на мобилке, показываем при .show */
+    position: absolute;
+    top: 64px;
+    left: 12px;
+    right: 12px;
+    flex-direction: column;
+    background: var(--card);
+    gap: 6px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(11,18,32,0.08);
+    z-index: 45;
+  }
+  .main-nav.show { display:flex; }
+
+  .hamburger { display: block; }
+
+  /* кнопки навигации на мобилке */
+  .nav-btn {
+    padding: 10px 12px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  /* подстройки hero */
+  .hero{
+    padding:14px;
+    align-items:flex-start;
+  }
+
+  /* в одну колонку продукты */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* формы на мобилке */
+  .feedback-form { max-width:100%; }
+  .feedback-form textarea { height: 180px; }
 }
 
-/* Мелкие экраны */
-@media (max-width: 480px){
-  .hero h1{ font-size:24px; }
-  .hero p{ font-size:1em; }
-  .product-card h3{ font-size:1.1em; }
-  .product-card p{ font-size:0.9em; }
+/* Очень маленькие экраны */
+@media (max-width: 420px) {
+  .logo { width:120px; }
+  .nav-btn { font-size:14px; padding:8px 10px; }
+  .hero h1 { font-size:22px; }
+  .feedback-form textarea { height: 160px; }
 }
