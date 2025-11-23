@@ -1,70 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MaxPlay</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Max Play — Главная</title>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<header>
+    <div class="logo">Max Play</div>
+    <nav class="main-nav">
+        <button type="button" data-section="home" class="nav-btn">Главная</button>
+        <button type="button" data-section="menu" class="nav-btn">Меню</button>
+        <button type="button" data-section="shop" class="nav-btn">Магазин</button>
+        <button type="button" data-section="contact" class="nav-btn">Обратная связь</button>
+        <button type="button" data-section="tech" class="nav-btn">Новые технологии</button>
+        <button type="button" data-section="about" class="nav-btn">О нас</button>
+    </nav>
+    <div class="hamburger">&#9776;</div>
+</header>
 
-<!-- ===== Навигация ===== -->
-<nav>
-  <div class="logo">MaxPlay</div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <ul class="nav-links">
-    <li><a href="#hero">Главная</a></li>
-    <li><a href="#about">О нас</a></li>
-    <li><a href="#products">Продукты</a></li>
-    <li><a href="#contact">Контакты</a></li>
-  </ul>
-</nav>
+<main>
+    <!-- Главная (home) -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>Будущее уже здесь</h1>
+            <p>Инновации Max Play формируют технологический мир завтрашнего дня.</p>
+            <button id="learnMoreBtn" class="primary">Подробнее</button>
+        </div>
+    </section>
 
-<!-- ===== Главный блок ===== -->
-<section class="hero" id="hero">
-  <h1>Добро пожаловать в MaxPlay</h1>
-  <p>Лучшие смарт-решения для твоей жизни</p>
-</section>
+    <!-- Меню -->
+    <section id="menu" class="page">
+        <div class="container">
+            <h2>Меню</h2>
+            <p>Информация о наших услугах и продуктах.</p>
+        </div>
+    </section>
 
-<!-- ===== О нас ===== -->
-<section id="about" class="container">
-  <h2>О нас</h2>
-  <p>Мы создаём инновационные продукты, которые делают жизнь проще, умнее и интереснее.</p>
-</section>
+    <!-- Магазин / Продукты -->
+    <section id="shop" class="page">
+        <div class="container">
+            <h2>Магазин</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Продукт 1">
+                    <h3>Смарт-рюкзак</h3>
+                    <p>Умный рюкзак с встроенной зарядкой для всех устройств.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Продукт 2">
+                    <h3>Смарт-очки</h3>
+                    <p>Очки с дополненной реальностью и защитой глаз.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Продукт 3">
+                    <h3>Смарт-часы</h3>
+                    <p>Следи за здоровьем и уведомлениями прямо с руки.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ===== Продукты ===== -->
-<section id="products" class="container products">
-  <div class="product-card">
-    <img src="https://via.placeholder.com/300x200" alt="Продукт 1">
-    <h3>Смарт-рюкзак</h3>
-    <p>Умный рюкзак с встроенной зарядкой для всех устройств.</p>
-    <button>Подробнее</button>
-  </div>
-  <div class="product-card">
-    <img src="https://via.placeholder.com/300x200" alt="Продукт 2">
-    <h3>Смарт-очки</h3>
-    <p>Очки с дополненной реальностью и защитой глаз.</p>
-    <button>Подробнее</button>
-  </div>
-  <div class="product-card">
-    <img src="https://via.placeholder.com/300x200" alt="Продукт 3">
-    <h3>Смарт-часы</h3>
-    <p>Следи за здоровьем и уведомлениями прямо с руки.</p>
-    <button>Подробнее</button>
-  </div>
-</section>
+    <!-- Обратная связь -->
+    <section id="contact" class="page">
+        <div class="container">
+            <h2>Обратная связь</h2>
+            <p>Форма обратной связи или контакты.</p>
+        </div>
+    </section>
 
-<!-- ===== Контакты ===== -->
-<section id="contact" class="container">
-  <h2>Контакты</h2>
-  <p>Свяжитесь с нами по email: contact@maxplay.com</p>
-</section>
+    <!-- Новые технологии -->
+    <section id="tech" class="page">
+        <div class="container">
+            <h2>Новые технологии</h2>
+            <p>Наши будущие проекты и R&D.</p>
+        </div>
+    </section>
 
-<!-- ===== Футер ===== -->
+    <!-- О нас -->
+    <section id="about" class="page">
+        <div class="container">
+            <h2>О нас</h2>
+            <p>Max Play — это не просто компания. Мы строим будущее технологий, создавая продукты, которые меняют привычный мир и открывают новые горизонты возможностей...</p>
+        </div>
+    </section>
+</main>
+
 <footer>
-  &copy; 2025 MaxPlay. Все права защищены.
+    <p>© 2025 Max Play. Все права защищены.</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
