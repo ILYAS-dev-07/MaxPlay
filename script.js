@@ -19,3 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (section) showSection(section);
 })})})
 
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('show');
+}
+
