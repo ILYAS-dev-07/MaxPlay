@@ -5,6 +5,15 @@ function showSection(id) {
     const el = document.getElementById(id);
     if(el) el.classList.add('active');
     window.scrollTo({ top:0, behavior:'smooth' });
+
+    // Подсветка кнопки
+    const navButtons = document.querySelectorAll('.main-nav .nav-btn');
+    navButtons.forEach(btn=>{
+        btn.classList.remove('active');
+        if(btn.getAttribute('data-section') === id){
+            btn.classList.add('active');
+        }
+    });
 }
 
 // Навигация
@@ -27,8 +36,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
     // Закрытие меню при выборе раздела
-    const navLinks = document.querySelectorAll('.nav-btn');
-    navLinks.forEach(link=>{
+    navButtons.forEach(link=>{
         link.addEventListener('click', ()=>{
             if(mainNav.classList.contains('show')) mainNav.classList.remove('show');
         });
