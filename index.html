@@ -1,110 +1,103 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Max Play — Главная</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-        /* Стили для вкладки О нас (оставил, как было) */
-        #about .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        #about h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 700;
-        }
-        #about p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="LOGO.png" alt="Max Play" class="logo">
-        <nav class="main-nav" aria-label="Главная навигация">
-            <button type="button" data-section="home" class="nav-btn">Главная</button>
-            <button type="button" data-section="menu" class="nav-btn">Меню</button>
-            <button type="button" data-section="shop" class="nav-btn">Магазин</button>
-            <button type="button" data-section="contact" class="nav-btn">Обратная связь</button>
-            <button type="button" data-section="about" class="nav-btn">О нас</button>
-        </nav>
 
-        <!-- гамбургер появляется только на мобильных -->
-        <button class="hamburger" aria-label="Открыть меню" aria-expanded="false">&#9776;</button>
-    </header>
+<header>
+    <img src="img/LOGO.png" alt="Max Play" class="logo">
 
-    <main>
-        <!-- Главная (home) -->
-        <section id="home" class="page active">
-            <div class="hero">
-                <h1>Будущее уже здесь</h1>
-                <p>Инновации Max Play формируют технологический мир завтрашнего дня.</p>
-                <button id="learnMoreBtn" class="primary">Подробнее</button>
-            </div>
-        </section>
+    <!-- Переключатель языков -->
+    <div class="lang-switch">
+        <button data-lang="ru">RU</button>
+        <button data-lang="tr">TR</button>
+        <button data-lang="en">EN</button>
+    </div>
 
-        <!-- Меню -->
-        <section id="menu" class="page">
-            <div class="container">
-                <h2>Меню</h2>
-                <p>Информация о наших услугах и продуктах.</p>
-            </div>
-        </section>
+    <!-- Меню -->
+    <nav class="main-nav" aria-label="Главная навигация">
+        <button type="button" class="nav-btn" data-section="home" data-key="nav_home">Главная</button>
+        <button type="button" class="nav-btn" data-section="menu" data-key="nav_menu">Меню</button>
+        <button type="button" class="nav-btn" data-section="shop" data-key="nav_shop">Магазин</button>
+        <button type="button" class="nav-btn" data-section="contact" data-key="nav_contact">Обратная связь</button>
+        <button type="button" class="nav-btn" data-section="about" data-key="nav_about">О нас</button>
+    </nav>
 
-        <!-- Магазин -->
-        <section id="shop" class="page">
-            <div class="container">
-                <h2>Магазин</h2>
-                <p>Здесь будут товары Max Play.</p>
-            </div>
-        </section>
+    <button class="hamburger" aria-expanded="false">&#9776;</button>
+</header>
 
-        <!-- Обратная связь -->
-        <section id="contact" class="page">
-            <div class="container">
-                <h2>Обратная связь</h2>
-                <p>Форма обратной связи или контакты.</p>
+<main>
+    <!-- Главная -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1 data-key="home_title">Будущее уже здесь</h1>
+            <p data-key="home_subtitle">Инновации Max Play формируют технологический мир завтрашнего дня.</p>
+            <button id="learnMoreBtn" class="primary" data-key="btn_more">Подробнее</button>
+        </div>
+    </section>
 
-                <ul class="contact-list">
-                    <li><a href="https://wa.me/905514976575" target="_blank" rel="noopener">WhatsApp</a></li>
-                    <li><a href="https://instagram.com/ilyas.galip" target="_blank" rel="noopener">Instagram</a></li>
-                    <li><a href="https://t.me/ilyas_GG" target="_blank" rel="noopener">Telegram</a></li>
-                </ul>
+    <!-- Меню -->
+    <section id="menu" class="page">
+        <div class="container">
+            <h2 data-key="menu_title">Меню</h2>
+            <p data-key="menu_text">Информация о наших услугах и продуктах.</p>
+        </div>
+    </section>
 
-                <form action="https://formspree.io/f/meodvbbr" method="POST" class="feedback-form" aria-label="Форма обратной связи">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <textarea name="message" placeholder="Ваше сообщение" required></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
-        </section>
+    <!-- Магазин -->
+    <section id="shop" class="page">
+        <div class="container">
+            <h2 data-key="shop_title">Магазин</h2>
+            <p data-key="shop_text">Здесь будут товары Max Play.</p>
+        </div>
+    </section>
 
-        <!-- О нас -->
-        <section id="about" class="page">
-            <div class="container">
-                <h2>О нас</h2>
-                <p>Max Play — это не просто компания. Мы строим будущее технологий, создавая продукты, которые меняют привычный мир и открывают новые горизонты возможностей. Наша миссия — вдохновлять людей на смелые идеи и обеспечивать их инструментами для воплощения самых амбициозных проектов.</p>
-                <p>Мы верим, что инновации рождаются там, где технологии встречаются с креативностью. Каждый наш продукт проходит тщательный путь разработки, сочетая передовые инженерные решения, стильный дизайн и заботу о пользователе. В Max Play качество и надежность идут рука об руку с прогрессом и новаторством.</p>
-                <p>Наша команда объединяет талантливых специалистов, увлеченных своим делом, и мы гордимся тем, что создаем продукты, которые становятся частью жизни людей, делают её удобнее, ярче и продуктивнее. Max Play — это пространство, где будущее создается сегодня.</p>
-            </div>
-        </section>
-    </main>
+    <!-- Обратная связь -->
+    <section id="contact" class="page">
+        <div class="container">
+            <h2 data-key="contact_title">Обратная связь</h2>
+            <p data-key="contact_text">Форма обратной связи или контакты.</p>
 
-    <footer>
-        <p>© 2025 Max Play. Все права защищены.</p>
-    </footer>
+            <ul class="contact-list">
+                <li><a href="https://wa.me/905514976575" target="_blank">WhatsApp</a></li>
+                <li><a href="https://instagram.com/ilyas.galip" target="_blank">Instagram</a></li>
+                <li><a href="https://t.me/ilyas_GG" target="_blank">Telegram</a></li>
+            </ul>
 
-    <script src="script.js" defer></script>
+            <form action="https://formspree.io/f/meodvbbr" method="POST" class="feedback-form">
+                <input type="text" name="name" data-key-placeholder="contact_name" placeholder="Ваше имя" required>
+                <textarea name="message" data-key-placeholder="contact_msg" placeholder="Ваше сообщение" required></textarea>
+                <button type="submit" data-key="btn_send">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="page">
+        <div class="container">
+            <h2 data-key="about_title">О нас</h2>
+
+            <p data-key="about_p1">
+                Max Play — это не просто компания. Мы строим будущее технологий…
+            </p>
+            <p data-key="about_p2">
+                Мы верим, что инновации рождаются там, где технологии встречаются с креативностью…
+            </p>
+            <p data-key="about_p3">
+                Наша команда объединяет талантливых специалистов…
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p data-key="footer">© 2025 Max Play. Все права защищены.</p>
+</footer>
+
+<script src="script.js" defer></script>
 </body>
 </html>
-
